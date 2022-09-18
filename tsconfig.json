@@ -1,26 +1,23 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react" /** how to TS treat JSX files */,
+    "module": "ESNext" /** how to TS compile ES6 imports, exports ( ESNext: don't change ) */,
+    "moduleResolution": "Node" /** how to TS recognize import, export system */,
+    "strict": true /** TS check ALL types */,
+    "target": "ES6" /** set target ES Version */,
+    "sourceMap": true /** enable TS emitting source maps. */,
+    "esModuleInterop": true /** */,
+    "lib": ["dom", "esnext"] /** */,
+    "baseUrl": ".",
+    "paths": {
+      "@shared/*": ["./src/shared/*"],
+      "@app2/*": ["./src/app2/*"],
+      "@css/*": ["./resource/css/*"],
+      "@img/*": ["./resource/img/*"]
+    },
+    "typeRoots": ["./node_modules/@types", "./src/shared/types"],
+    "experimentalDecorators": true /**  to enable Decorator */,
+    "useDefineForClassFields": true /**  to enable Decorator */
   },
-  "include": [
-    "src"
-  ]
+  "exclude": ["node_modules"]
 }
